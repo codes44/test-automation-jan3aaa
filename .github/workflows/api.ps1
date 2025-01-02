@@ -82,5 +82,6 @@ try {
 }
 catch { 
     Write-Error "Failed to make HTTP POST request."
+    Write-Error "$_.Exception.Message"
     exit 1
 }
