@@ -34,7 +34,7 @@
           - name: Create Task
             shell: pwsh
             env:
-              PAT_TOKEN:   "${{ secrets.AZUREDEVOPSPAT }}"
+              PAT_TOKEN:   ${{ secrets.AZUREDEVOPSPAT }}
               # PAT_TOKEN:   "ADEBPmsjzP4UGO4gRJypuTXM1o5TXNKjyqgEJAJ2uKbYqHJjB6DWJQQJ99BAACAAAAArDC5SAAASAZDOfGF1"
               PR_TITLE:    "PR: ${{ github.event.pull_request.title }}"
               TASK_DESC:   "${{ github.event.pull_request.body}} --> ${{ github.event.pull_request.html_url}}"
