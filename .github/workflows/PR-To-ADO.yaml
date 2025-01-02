@@ -18,6 +18,7 @@
         steps:
           - name: Checkout Preferences File and Scripts
             uses: actions/checkout@v4
+            secrets: inherit
             with:
               repository: "Redback-Operations/redback-cyber"
               path: "redback-cyber"
