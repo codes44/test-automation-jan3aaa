@@ -81,6 +81,7 @@ try {
                     -ContentType "application/json-patch+json"
 }
 catch { 
+    Write-Host "$Error[0]"
     Write-Error "Failed to make HTTP POST request."
     Write-Error "$_.Exception.Message"
     exit 1
