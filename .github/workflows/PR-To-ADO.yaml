@@ -35,7 +35,7 @@
             run: |
               $user = ./redback-cyber/.github/workflows/scripts/Select-Reviewer.ps1 `
               -Path "./redback-cyber/.github/workflows/data/PR_Preferences.json"
-              $env:USER = $user
+              echo "USER=$user" >> $GITHUB_ENV
     
           - name: Create Task
             shell: pwsh
@@ -47,7 +47,7 @@
 
             run: |
               # ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User 's222250824@deakin.edu.au'
-              ./pathtest/.github/workflows/api.ps1 -User 's222250824@deakin.edu.au'
+              ./pathtest/.github/workflows/api.ps1 -User $env:USER
             
               
     
