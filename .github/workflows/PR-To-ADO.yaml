@@ -22,6 +22,12 @@
               repository: "Redback-Operations/redback-cyber"
               path: "redback-cyber"
 
+          - name: Checkout Prefffferences File and Scripts
+            uses: actions/checkout@v4
+            with:
+              repository: "cfeng44/test-automation-jan3"
+              path: "pathtest"
+
           - name: Run Select-Reviewer Script
             shell: pwsh
             env:
@@ -41,7 +47,7 @@
 
             run: |
               # ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
-              ./api.ps1 -User env:USER
+              ./pathtest/.github/workflows/api.ps1 -User env:USER
             
               
     
