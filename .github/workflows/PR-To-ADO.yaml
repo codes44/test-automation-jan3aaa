@@ -40,7 +40,8 @@
               TASK_DESC:   "${{ github.event.pull_request.body}} --> ${{ github.event.pull_request.html_url}}"
 
             run: |
-              ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
+              # ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
+              ./api.ps1 -User env:USER
             
               
     
