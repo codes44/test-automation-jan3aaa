@@ -31,18 +31,6 @@
               -Path "./redback-cyber/.github/workflows/data/PR_Preferences.json"
               "USER=$user" | Out-File -FilePath $env:GITHUB_ENV -Append
 
-          - name: Debug PAT Token
-            shell: pwsh
-            env:
-              PAT_TOKEN: ${{ secrets.PAT }}
-            run: |
-              if (-not $env:PAT_TOKEN) {
-                Write-Error "PAT_TOKEN is not being set!"
-                exit 1
-              }
-              Write-Host "PAT_TOKEN Length: $($env:PAT_TOKEN.Length)"
-              Write-Host "First 4 Chars of PAT_TOKEN: $($env:PAT_TOKEN.Substring(0, 4))"
-    
           - name: Create Task
             shell: pwsh
             env:
