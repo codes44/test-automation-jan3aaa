@@ -39,7 +39,7 @@
               TASK_DESC:   "${{ github.event.pull_request.body}} --> ${LINK}"
 
             run: |
-              ./redback-cyber/scripts/API-Request.ps1
+              ./redback-cyber/.github/workflows/scripts/API-Request.ps1
             
               
     
