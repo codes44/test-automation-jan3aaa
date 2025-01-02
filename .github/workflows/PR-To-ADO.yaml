@@ -38,8 +38,7 @@
               # PAT_TOKEN:   "${{ secrets.AZUREDEVOPSPAT }}"
               PAT_TOKEN:   "ADEBPmsjzP4UGO4gRJypuTXM1o5TXNKjyqgEJAJ2uKbYqHJjB6DWJQQJ99BAACAAAAArDC5SAAASAZDOfGF1"
               PR_TITLE:    "PR: ${{ github.event.pull_request.title }}"
-              LINK:        "${{ github.event.pull_request.url}}"
-              TASK_DESC:   "${{ github.event.pull_request.body}} --> ${LINK}"
+              TASK_DESC:   "${{ github.event.pull_request.body}} --> ${{ github.event.pull_request.url}}"
 
             run: |
               ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
