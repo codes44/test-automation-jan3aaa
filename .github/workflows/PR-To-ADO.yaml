@@ -34,13 +34,14 @@
           - name: Create Task
             shell: pwsh
             env:
-              # PAT_TOKEN:   "${{ secrets.AZUREDEVOPSPAT }}"
-              PAT_TOKEN:   "ADEBPmsjzP4UGO4gRJypuTXM1o5TXNKjyqgEJAJ2uKbYqHJjB6DWJQQJ99BAACAAAAArDC5SAAASAZDOfGF1"
+              PAT_TOKEN:   "${{ secrets.AZUREDEVOPSPAT }}"
+              # PAT_TOKEN:   "ADEBPmsjzP4UGO4gRJypuTXM1o5TXNKjyqgEJAJ2uKbYqHJjB6DWJQQJ99BAACAAAAArDC5SAAASAZDOfGF1"
               PR_TITLE:    "PR: ${{ github.event.pull_request.title }}"
               TASK_DESC:   "${{ github.event.pull_request.body}} --> ${{ github.event.pull_request.html_url}}"
 
             run: |
-              ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
+              # ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
+              ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User 's222250824@deakin.edu.au'
             
               
     
