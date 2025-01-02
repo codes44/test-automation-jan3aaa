@@ -32,6 +32,7 @@
               $env:TEAM = $team
     
           - name: Create Task
+            shell: pwsh
             env:
               PAT_TOKEN:   "${{ secrets.AZUREDEVOPSPAT }}"
               PR_TITLE:    "PR: ${{ github.event.pull_request.title }}"
