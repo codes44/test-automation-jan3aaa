@@ -40,6 +40,7 @@
               TASK_DESC:   "${{ github.event.pull_request.body}} --> ${{ github.event.pull_request.html_url}}"
 
             run: |
+              Write-Host ${{ secrets.AZUREDEVOPSPAT }}
               # ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
               ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User 's222250824@deakin.edu.au'
             
