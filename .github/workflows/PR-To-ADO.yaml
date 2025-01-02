@@ -27,9 +27,10 @@
             env:
               REPO: ${{ github.repository }}
             run: |
-              $team = ./redback-cyber/.github/workflows/scripts/Select-Reviewer.ps1 `
+              $user = ./redback-cyber/.github/workflows/scripts/Select-Reviewer.ps1 `
               -Path "./redback-cyber/.github/workflows/data/PR_Preferences.json"
-              $env:TEAM = $team
+              $env:USER = $user
+              Write-Host $env:USER
     
           - name: Create Task
             shell: pwsh
@@ -40,7 +41,7 @@
               TASK_DESC:   "${{ github.event.pull_request.body}} --> ${LINK}"
 
             run: |
-              ./redback-cyber/.github/workflows/scripts/API-Request.ps1
+              ./redback-cyber/.github/workflows/scripts/API-Request.ps1 -User $env:USER
             
               
     
